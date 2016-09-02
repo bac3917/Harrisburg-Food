@@ -1,31 +1,36 @@
 
 #rmaps
-# https://github.com/ramnathv/rMaps
-
-HBGfood<-read.csv("C:/bac/R/HarrisburgFood.csv")
-head(HBGfood)
-dim(HBGfood)
-
-library(rworldmap)
-library(rworldxtra)
-FoodMap<-getMap(resolution = "high")
-plot(FoodMap, xlim = c(-80, -77), ylim = c(39, 43), asp = 1)
-points(HBGfood$Lat,HBGfood$Lon, col='blue',cex=10)
-
-
-library(rgdal)
+# install relevant packages
+install.packages("devtools")
+library(devtools)
+install_github('arilamstein/choroplethrZip@v1.4.0')
+library(choroplethrZip)
+install.packages("ggplot")
 library(ggplot2)
+install.packages("RCurl")
+library(RCurl)
 
-# PA counties
-PAcounties<-readOGR(dsn="//FILESVR01/Research_and_Evaluation_Group/GENERAL/GIS_SHapefiles/PA/Counties2015",layer="PaCounty2015_01")
-PAmap<-ggplot() +  geom_polygon(data=PAcounties, aes(x=long, y=lat, group=group), fill=rgb(1,0,0,0.5),color='green')
+ference_map = TRUE)
 
-# rivers.
-rivers<-readOGR(dsn="//FILESVR01/Research_and_Evaluation_Group/GENERAL/GIS_SHapefiles/PA_WATER",layer="pennsylvania_water")
-PArivers<-ggplot() +  geom_polygon(data=rivers, aes(x=long, y=lat, group=group), color='blue'   )
+#open food data
 
-PAmap
-PArivers
+food.raw<-getURL("https://raw.githubusercontent.com/bac3917/Harrisburg-Food/master/HarrisburgFood.csv")
+HBGfood<-read.csv(text=food.raw)
+head(HBGfood)
 
-FoodMap<-PAmap+ggplot() + geom_point(data=HBGfood, aes(x=HBGfood$Lon, y=HBGfood$Lat),color='blue')
+
+#zip zoom   
+
+data(df_pop_zip)
+hbgZIPS = c("17101", "17102", "17103", "17104", "17110", "17111", "17120")
+Harrisburg<-zip_choropleth(df_pop_zip,
+               zip_zoom=c(hbgZIPS),
+               title="2012 Harrisburg ZCTA Population Estimates",
+               legend="Population",
+                num_colors=1,
+               reference_map = TRUE)
+Harrisburg
+
+FoodMap<-Harrisburg+ geom_point(data=HBGfood, aes(x=HBGfood$Lon, y=HBGfood$Lat), color='red' )
+
 FoodMap
