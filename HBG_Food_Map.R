@@ -10,7 +10,6 @@ library(ggplot2)
 install.packages("RCurl")
 library(RCurl)
 
-ference_map = TRUE)
 
 #open food data
 
