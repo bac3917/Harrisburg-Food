@@ -1,8 +1,8 @@
-Name,Type,Address,Lat,Lon,DateEntered
-Mac Lay Street Food Market,Grocery,"234 Maclay St, Harrisburg, PA 17110",40.27868,-76.8971,8/19/2016
-Deardorff Grocery,Grocery,224 Hamilton St,40.27362,-76.89361,8/19/2016
-Sayford Market,Grocery,"1307 N 3rd St, Harrisburg, PA 17102",40.27019,-76.88929,8/19/2016
-Alvarro Bread & Pastry,Bakery,236 Peffer St 17102,40.27718,-76.8962,8/19/2016
+Name,Type,Address,Lat,Lon,DateEntered,HasFruit
+Mac Lay Street Food Market,Grocery,"234 Maclay St, Harrisburg, PA 17110",40.27868,-76.8971,8/19/2016,"Yes"
+Deardorff Grocery,Grocery,224 Hamilton St,40.27362,-76.89361,8/19/2016,"Yes"
+Sayford Market,Grocery,"1307 N 3rd St, Harrisburg, PA 17102",40.27019,-76.88929,8/19/2016,"Yes"
+Alvarro Bread & Pastry,Bakery,236 Peffer St 17102,40.27718,-76.8962,8/19/2016,"No"
 Broad St Market,Grocery,1233 N. 3rd St 17102,40.26979,-76.88851,8/19/2016
 Shakti Grocery,Grocery,"6 S. 3rd St., 17101",40.26073,-76.88058,8/19/2016
 Fourth St Mkt & Grocery,Grocery,23 S. 4th St. 17101,40.26161,-76.87863,8/19/2016
@@ -16,6 +16,6 @@ Shop n' Drive,Convenience,2201 Herr St 17103,40.27837,-76.8583,8/19/2016
 Convenience Store,Convenience,"497 Walnut St Harrisburg, PA",40.26383,-76.88021,8/19/2016
 New York Deli and Convenience Store,Convenience,"314 N. 2nd St. Harrisburg, PA",40.26225,-76.88577,8/19/2016
 Ciao! Bakery,Bakery,"31 S 3rd St, Harrisburg, PA 17101",40.26041,-76.87941,8/19/2016
-P&R Bakery / Café,Bakery,"1300 N 3rd St, Harrisburg, PA 17102",40.2696,-76.88933,8/19/2016
+P&R Bakery / CafÃ©,Bakery,"1300 N 3rd St, Harrisburg, PA 17102",40.2696,-76.88933,8/19/2016
 Sun's Food Market,Grocery,"1701 Market St. Harrisburg, PA",40.26711,-76.86455,8/25/2016
 Quick Stop,Grocery,"Harris and 4th Streets, Harrisburg, PA",40.2735,-76.88967,8/27/2016
