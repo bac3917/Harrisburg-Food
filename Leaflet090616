@@ -1,0 +1,28 @@
+
+library(leaflet)
+library(RCurl)
+
+food.raw<-getURL("https://raw.githubusercontent.com/bac3917/Harrisburg-Food/master/HarrisburgFood090216.csv")
+HBGfood<-read.csv(text=food.raw)
+head(HBGfood)R
+
+groupColors=colorFactor(palette = "RdYlBu",domain=HBGfood$Type)
+(m2 <- leaflet(HBGfood) %>% addTiles() %>% 
+        setView(-76.85, 40.234, 13) %>% # map location
+        addMarkers(data=HBGfood, popup=HBGfood$Name) %>% # add a marker
+        addPopups(-76.82, 40.27, popup = "Consumer Food Sources") %>% # popup
+        # add some circles from df:
+        addCircles(~HBGfood$Lon, ~HBGfood$Lat, color = ~groupColors(Type), radius(24), runif(90, -2, -1), runif(90, 53, 54), runif(90, 10, 500))) %>% 
+        addLegend(position="topright",pal=groupColors,values=~Type)
+
+# stamen.toner map style
+groupColors=colorFactor(palette = "RdYlBu",domain=HBGfood$Type)
+(m3 <- leaflet(HBGfood) %>% addProviderTiles("Stamen.Toner") %>% 
+        setView(-76.85, 40.2934, 13) %>% # map location
+        addMarkers(data=HBGfood, popup=HBGfood$Name) %>% # add a marker
+        addPopups(-76.82, 40.27, popup = "Consumer Food Sources") %>% # popup
+        # add some circles from df:
+        addCircles(~HBGfood$Lon, ~HBGfood$Lat, color = ~groupColors(Type), runif(90, -2, -1), runif(90, 53, 54), runif(90, 10, 500))) %>% 
+        addLegend(position="topright",pal=groupColors,values=~Type)
+
+m3
