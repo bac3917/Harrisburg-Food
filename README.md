@@ -16,4 +16,5 @@ m3
 ```
 
 More info on creating pages:
+http://jason.bryer.org/posts/2012-12-10/Markdown_Jekyll_R_for_Blogging.html 
 http://kbroman.org/simple_site/
