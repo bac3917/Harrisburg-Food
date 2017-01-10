@@ -1,6 +1,5 @@
 ## Welcome to the Harrisburg Food Desert Project
 
-```markdown
 {r setup, out.width = '\\maxwidth', include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(leaflet)
@@ -15,6 +14,5 @@ groupColors=colorFactor(palette = "Greens",domain=HBGfood$Type)
         addMarkers(data=HBGfood, popup=HBGfood$Name))
 m3
 
-```
 More info on creating pages:
 http://kbroman.org/simple_site/
