@@ -1,29 +1,28 @@
 ## Welcome to the Harrisburg Food Desert Project
 
-You can use the [editor on GitHub](https://github.com/bac3917/Harrisburg-Food/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
+```{r setup, out.width = '\\maxwidth', include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(leaflet)
+library(RCurl)
+food.raw<-getURL("https://raw.githubusercontent.com/bac3917/Harrisburg-Food/master/HarrisburgFood090216.csv")
+HBGfood<-read.csv(text=food.raw)
 
-# Header 1
-## Header 2
-### Header 3
+```
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+```{r leaflet, echo=FALSE}
+groupColors=colorFactor(palette = "Greens",domain=HBGfood$Type)
+(m3 <- leaflet(HBGfood) %>% addProviderTiles("Thunderforest.Landscape") %>% 
+        setView(-76.887877, 40.26976, 14) %>% # map location
+        addMarkers(data=HBGfood, popup=HBGfood$Name))
+m3
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
