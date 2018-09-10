@@ -1,6 +1,6 @@
 Name,Type,Address,Lat,Lon,DateEntered,FruitLevel
 MarketName Unknown,Grocery,"498 17th St, Harrisburg, PA 17110",40.260575, -76.861562,9/6/2018,"Unknown"
-MarketName Unknown, Grocerty,20 17th St, Harrisburg, PA 17011",40.267264, -76.864620,"Unknown",9/6/2018
+MarketName Unknown, Grocerty,20 17th St, Harrisburg, PA 17011",40.267264, -76.864620,,9/6/2018,"Unknown"
 Mac Lay Street Food Market,Grocery,"234 Maclay St, Harrisburg, PA 17110",40.27868,-76.8971,8/19/2016,"More"
 Deardorff Grocery,Grocery,224 Hamilton St,40.27362,-76.89361,8/19/2016,"Less"
 Sayford Market,Grocery,"1307 N 3rd St, Harrisburg, PA 17102",40.27019,-76.88929,8/19/2016,"Less"
